@@ -1,0 +1,30 @@
+.error {
+    color: #e00b12;
+    float: left;
+}
+.container {
+    margin: 0 auto;
+    width: 1024px;
+    background: #dcdfe5;
+    padding: 50px 10px;
+}
+.form{
+    width: 500px;
+    margin: 0 auto;
+}
+.form_inp {
+    display: block;
+    margin: 15px 0;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 1024px;
+    text-align: center;
+}
+footer p {
+    display: inline-block;
+}
+.header_title {
+    text-align: center;
+}
