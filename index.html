@@ -20,15 +20,15 @@
         </header>
 
         
-        <form class="form" action="" method="POST">
+        <form class="form" action="" method="POST" onsubmit="sendData('index.html', 'POST')">
             <input class="form_inp" type="text" name="email" placeholder="Email(Required)">
             <input class="form_inp" type="text" name="userName" placeholder="Name(Required)">
             <input class="form_inp" type="password" name="password" placeholder="Password">
             <input class="form_inp" type="password" name="password2" placeholder="Confirm the password">
             
             <div class="choice">
-                <button type="button" onclick="validate(this.form)">Register</button>
-                <button type="button">Log in</button>
+                <button type="submit" onclick="validate(this.form)">Register</button>
+                <button type="submit">Log in</button>
             </div>
         </form>
         <footer>
