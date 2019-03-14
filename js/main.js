@@ -6,11 +6,12 @@ function validate(form) {
     if(!els.userName.value) answer += " * Fill in your name. </br>";
     if(!/^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$/.test(els.userName.value)) answer += " * Fill in your CORRECT name(WITHOUT NUMBERS). </br>";
     if(!els.password.value) answer += " * Fill in the password. </br>";
-    //if(!/(?=.*[0-9])(?=.*[a-z]){8,}/.test(els.password.value)) answer += " * incorrect password. MINIMUM: 8 SYMBOLS. Password must contain numbers and letters </br>";
+    if(!/(?=.*[0-9])(?=.*[a-z]){8,}/.test(els.password.value)) answer += " * incorrect password. MINIMUM: 8 SYMBOLS. Password must contain numbers and letters </br>";
     if(els.password.value == "1234qwer"||els.password.value == "qwer1234") answer += " * Too weak password. </br>";
     if(els.password.value!=els.password2.value) answer += " * Not confirmed password, try again. </br>";
 
     showAnswer(answer);
+    if(answer == '') sendData('index.html','POST', form);
 
     function showAnswer(answer){
         removeAlert();
@@ -32,11 +33,10 @@ function validate(form) {
     }
 }
 
-function sendData(url, method){
-    if(method != 'POST'){
-        throw new Error("incorrect method");
-    }
-    fetch(url,{method: method}).then(function(response){
-        console.log(response.status);
-    })
+function sendData(url, method, form){
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.send(formData);
 }
