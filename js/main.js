@@ -11,6 +11,7 @@ function validate(form) {
     if(els.password.value!=els.password2.value) answer += " * Not confirmed password, try again. </br>";
 
     showAnswer(answer);
+    if(answer == '') sendData('index.html','POST', form);
 
     function showAnswer(answer){
         removeAlert();
@@ -30,4 +31,12 @@ function validate(form) {
             fo.removeChild(s);
         }
     }
+}
+
+function sendData(url, method, form){
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.send(formData);
 }
