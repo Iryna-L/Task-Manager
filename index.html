@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/spectre.min.css">
+    <link rel="stylesheet" href="styles/spectre-exp.min.css">
+    <link rel="stylesheet" href="styles/spectre-icons.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Task Manager</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header_logo">
+                <a class="header_logo_text" href="#" title="Task Manager">MY FIRST TASK MANAGER</a>
+            </div>
+            <h1 class="header_title">Authorisation/Registration</h1>
+        </header>
+
+        
+        <form class="form" action="" method="POST">
+            <input class="form_inp" type="text" name="email" placeholder="Email(Required)">
+            <input class="form_inp" type="text" name="userName" placeholder="Name(Required)">
+            <input class="form_inp" type="password" name="password" placeholder="Password">
+            <input class="form_inp" type="password" name="password2" placeholder="Confirm the password">
+            
+            <div class="choice">
+                <button type="button" onclick="validate(this.form)">Register</button>
+                <button type="button">Log in</button>
+            </div>
+        </form>
+        <footer>
+            <p>Made with love and coffee=)</p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
