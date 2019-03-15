@@ -8,21 +8,25 @@ function validate(form) {
     if(!els.password.value) answer += " * Fill in the password. </br>";
     if(!/(?=.*[0-9])(?=.*[a-z]){8,}/.test(els.password.value)) answer += " * incorrect password. MINIMUM: 8 SYMBOLS. Password must contain numbers and letters </br>";
     if(els.password.value == "1234qwer"||els.password.value == "qwer1234") answer += " * Too weak password. </br>";
-    if(els.password.value!=els.password2.value) answer += " * Not confirmed password, try again. </br>";
+    if(els.password2){
+        if(els.password.value!=els.password2.value) answer += " * Not confirmed password, try again. </br>";
+    }
+    
 
-    showAnswer(answer);
-    if(answer == '') sendData('index.html','POST', form);
+    showAnswer(answer, form);
+    if(answer == '') return true;
 
-    function showAnswer(answer){
+    function showAnswer(answer, form){
         removeAlert();
-        var f = document.getElementsByTagName("form")[0];  
+       
+        var f = form; 
         var elem = document.createElement("span");
         elem.classList.add("error");   
         elem.innerHTML = answer;
-        f.appendChild(elem); 
+        form.appendChild(elem); 
         var clearfix = document.createElement("div");
         clearfix.style.cssText = "clear:both;";
-        f.appendChild(clearfix); 
+        form.appendChild(clearfix); 
     }
     function removeAlert(){
         var fo = document.getElementsByTagName("form")[0]; 
@@ -31,12 +35,4 @@ function validate(form) {
             fo.removeChild(s);
         }
     }
-}
-
-function sendData(url, method, form){
-    var formData = new FormData(form);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.send(formData);
 }

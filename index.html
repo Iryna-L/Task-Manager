@@ -11,30 +11,68 @@
     <title>Task Manager</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container bg-secondary">
         <header class="header">
-            <div class="header_logo">
-                <a class="header_logo_text" href="#" title="Task Manager">MY FIRST TASK MANAGER</a>
-            </div>
-            <h1 class="header_title">Authorisation/Registration</h1>
+            <h1 class="header_title">Registration/Authorisation</h1>
         </header>
 
+        <div class="docs-demo columns">
+            <div class="column">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="input-example-1">Email</label>
+                        <input class="form-input" id="input-example-1" type="text" name="email" placeholder="Email(Required)">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="input-example-1">User name</label>
+                        <input class="form-input" id="input-example-1" type="text" name="userName" placeholder="Name(Required)">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="input-example-2">Password</label>
+                        <input class="form-input" id="input-example-2" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="input-example-2">Confirm password</label>
+                        <input class="form-input" id="input-example-2" type="password" name="password2" placeholder="Confirm Password">
+                    </div>
+                    <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox"><i class="form-icon"></i> Remember me
+                    </label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="button" onclick="sendData('index.html','POST',this.form)">Register</button>
+                    </div>
+                </form>
+                </div>
+                <div class="divider-vert" data-content="OR"></div>
+                <div class="column">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label" for="input-example-1">Email</label>
+                            <input class="form-input" id="input-example-1" type="text" name="email" placeholder="Email(Required)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="input-example-1">User name</label>
+                            <input class="form-input" id="input-example-1" type="text" name="userName" placeholder="Name(Required)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="input-example-2">Password</label>
+                            <input class="form-input" id="input-example-2" type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="button" onclick="sendData('index.html','POST',this.form)">Log in</button>
+                            <button class="btn btn-link btn-block">Learn more</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
         
-        <form class="form" action="" method="POST">
-            <input class="form_inp" type="text" name="email" placeholder="Email(Required)">
-            <input class="form_inp" type="text" name="userName" placeholder="Name(Required)">
-            <input class="form_inp" type="password" name="password" placeholder="Password">
-            <input class="form_inp" type="password" name="password2" placeholder="Confirm the password">
-            
-            <div class="choice">
-                <button type="button" onclick="validate(this.form)">Register</button>
-                <button type="submit">Log in</button>
-            </div>
-        </form>
         <footer>
-            <p>Made with love and coffee=)</p>
+            <p>Made with love and coffee <i class="icon icon-3x icon-emoji"></i></p>
         </footer>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/authRegister.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 </html>
